@@ -5,21 +5,22 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: aphyo-ht <aphyo-ht@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/05/10 19:12:52 by aphyo-ht          #+#    #+#             */
-/*   Updated: 2026/05/10 19:47:30 by aphyo-ht         ###   ########.fr       */
+/*   Created: 2026/05/10 19:48:10 by aphyo-ht          #+#    #+#             */
+/*   Updated: 2026/05/10 19:56:27 by aphyo-ht         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
+#include <string>
+#include <iostream>
 
-int	main(void) {
-	int	N = 5;
-	Zombie*	horde = zombieHorde(N, "Zombie");
+int main(void){
+	std::string str1="HI THIS IS BRAIN";
+	std::string* stringPTR = &str1;
+	std::string& stringREF = str1;
 
-	for (int i = 0; i < N; i++) {
-		horde[i].announce();
-	}
-	delete[] horde;
+	std::cout << &str1 << std::endl;
+	std::cout << stringPTR << std::endl;
+	std::cout << &stringREF << std::endl << std::endl;
 
-	return 0;
+	std::cout << str1 << std::endl << *stringPTR << std::endl <<  stringREF << std::endl;
 }
