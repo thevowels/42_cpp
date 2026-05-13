@@ -6,10 +6,11 @@
 /*   By: aphyo-ht <aphyo-ht@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/13 08:23:05 by aphyo-ht          #+#    #+#             */
-/*   Updated: 2026/05/13 09:17:29 by aphyo-ht         ###   ########.fr       */
+/*   Updated: 2026/05/13 21:29:47 by aphyo-ht         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "Harl.hpp"
 
 Harl::Harl(){}
 
@@ -17,8 +18,10 @@ Harl::~Harl(){}
 
 void Harl::debug(void)
 {
-    std::clog << "[ DEBUG ]" << std::endl;
-    std::clog << " Debug message" << std::endl;
+    // std::clog << "[ DEBUG ]" << std::endl;
+    // std::clog << " Debug message" << std::endl;
+    std::cout << "[ DEBUG ]" << std::endl;
+    std::cout << " Debug message" << std::endl;
 }
 
 void Harl::info(void)
@@ -29,14 +32,16 @@ void Harl::info(void)
 
 void Harl::warning(void)
 {
-    std::cerr << "[ WARNING ]" << std::endl;
-    std::cerr << " Warning message" << std::endl;
+    std::cout << "[ WARNING ]" << std::endl;
+    std::cout << " Warning message" << std::endl;
 }
 
 void Harl::error(void)
 {
-    std::cerr << "[ ERROR ]" << std::endl;
-    std::cerr << " Error message" << std::endl;
+    // std::cerr << "[ ERROR ]" << std::endl;
+    // std::cerr << " Error message" << std::endl;
+    std::cout << "[ ERROR ]" << std::endl;
+    std::cout << " Error message" << std::endl;
 }
 
 void Harl::complain(std::string level)

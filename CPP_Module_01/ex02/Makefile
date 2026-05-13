@@ -1,4 +1,4 @@
-NAME = memory
+NAME = reference
 
 CXX = c++
 CXXFLAGS = -Wall -Wextra -Werror -std=c++98

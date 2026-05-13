@@ -6,7 +6,7 @@
 /*   By: aphyo-ht <aphyo-ht@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/13 07:13:30 by aphyo-ht          #+#    #+#             */
-/*   Updated: 2026/05/13 07:32:05 by aphyo-ht         ###   ########.fr       */
+/*   Updated: 2026/05/13 21:20:07 by aphyo-ht         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ class HumanB{
 
     private:
         std::string _name;
-        Weapon& _weapon;
+        Weapon* _weapon;
 };
 
 #endif
