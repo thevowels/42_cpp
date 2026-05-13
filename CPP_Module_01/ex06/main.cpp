@@ -1,30 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Weapon.hpp                                         :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aphyo-ht <aphyo-ht@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/05/13 07:02:56 by aphyo-ht          #+#    #+#             */
-/*   Updated: 2026/05/13 07:23:14 by aphyo-ht         ###   ########.fr       */
+/*   Created: 2026/05/13 09:12:34 by aphyo-ht          #+#    #+#             */
+/*   Updated: 2026/05/13 09:22:45 by aphyo-ht         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef WEAPON_HPP
-# define WEAPON_HPP
+#include "Harl.hpp"
 
-#include <iostream>
-#include <string>
+int main(int argc, char **argv)
+{
+    Harl harl;
 
-class Weapon {
-    public:
-        Weapon();
-        Weapon(const std::string& type);
-        ~Weapon();
-        const std::string& getType() const;
-        void setType(const std::string& type);    
-    private:
-        std::string _type;
-};
 
-#endif
+    if(argc != 2)
+    {
+        std::cerr << "Usage: ./harlFilter <level>" << std::endl;
+        return 1;
+    }
+    harl.complain(argv[1]);
+    return 0;
+}
