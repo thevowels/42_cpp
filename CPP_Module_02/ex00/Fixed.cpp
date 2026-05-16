@@ -5,21 +5,18 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: aphyo-ht <aphyo-ht@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/05/13 14:07:21 by aphyo-ht          #+#    #+#             */
-/*   Updated: 2026/05/13 14:10:19 by aphyo-ht         ###   ########.fr       */
+/*   Created: 2026/05/14 16:43:17 by aphyo-ht          #+#    #+#             */
+/*   Updated: 2026/05/14 17:15:48 by aphyo-ht         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+
 
 #include "Fixed.hpp"
 
 Fixed::Fixed() : _fixedPointValue(0)
 {
     std::cout << "Default constructor called" << std::endl;
-}
-
-Fixed::~Fixed()
-{
-    std::cout << "Destructor called" << std::endl;
 }
 
 Fixed::Fixed(const Fixed& other)
@@ -34,6 +31,11 @@ Fixed& Fixed::operator=(const Fixed& other)
     if (this != &other)
         this->_fixedPointValue = other.getRawBits();
     return *this;
+}
+
+Fixed::~Fixed()
+{
+    std::cout << "Destructor called" << std::endl;
 }
 
 int Fixed::getRawBits(void) const
