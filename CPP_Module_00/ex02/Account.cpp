@@ -6,7 +6,7 @@
 /*   By: aphyo-ht <aphyo-ht@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/13 09:51:00 by aphyo-ht          #+#    #+#             */
-/*   Updated: 2026/05/13 10:05:47 by aphyo-ht         ###   ########.fr       */
+/*   Updated: 2026/05/17 14:35:51 by aphyo-ht         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,6 @@ void Account::_displayTimestamp( void ) {
     
     char buffer[20];
     std::strftime(buffer, 20, "[%Y%m%d_%H%M%S] ", time);
-
     std::cout << buffer;
 }
 

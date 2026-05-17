@@ -6,7 +6,7 @@
 /*   By: aphyo-ht <aphyo-ht@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/14 16:43:17 by aphyo-ht          #+#    #+#             */
-/*   Updated: 2026/05/16 13:56:47 by aphyo-ht         ###   ########.fr       */
+/*   Updated: 2026/05/17 15:07:42 by aphyo-ht         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,12 +35,12 @@ Fixed& Fixed::operator=(const Fixed& other)
 
 Fixed::~Fixed()
 {
-    std::cout << "Destructor called" << std::endl;
+    std::cout << "Destructor called  " << *this << std::endl;
 }
 
 int Fixed::getRawBits(void) const
 {
-    std::cout << "getRawBits member function called" << std::endl;
+    // std::cout << "getRawBits member function called" << std::endl;
     return this->_fixedPointValue;
 }
 
@@ -48,4 +48,40 @@ void Fixed::setRawBits(int const raw)
 {
     std::cout << "setRawBits member function called" << std::endl;
     this->_fixedPointValue = raw;
+}
+
+
+/*
+ex01
+
+Fixed(const int value);
+Fixed(const float value);
+float toFloat(void) const;
+int toInt(void) const;
+
+
+*/
+
+Fixed::Fixed(const int value) {
+	std::cout << "Int constructor called." << std::endl;
+	this->_fixedPointValue = value << this->_fractionalBits;
+}
+
+Fixed::Fixed(const float value) {
+	std::cout << "Float constructor called." << std::endl;
+	this->_fixedPointValue = roundf( value * (1 << this->_fractionalBits));
+}
+
+float Fixed::toFloat(void) const {
+	return ((static_cast<float> (this->_fixedPointValue)) / (1 <<  this->_fractionalBits));
+}
+
+
+int Fixed::toInt(void) const {
+	return (this->_fixedPointValue >> this->_fractionalBits);
+}
+
+std::ostream& operator<<(std::ostream& o, const Fixed& fixed) {
+	o << fixed.toFloat();
+	return o;
 }

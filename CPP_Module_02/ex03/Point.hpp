@@ -1,30 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Point.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aphyo-ht <aphyo-ht@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/05/16 13:53:04 by aphyo-ht          #+#    #+#             */
-/*   Updated: 2026/05/16 13:56:42 by aphyo-ht         ###   ########.fr       */
+/*   Created: 2026/05/17 20:45:55 by aphyo-ht          #+#    #+#             */
+/*   Updated: 2026/05/17 21:22:38 by aphyo-ht         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
+#pragma once
 
 #include "Fixed.hpp"
 
-int main(void){
-	Fixed a;
-	Fixed b(a);
-	Fixed c;
+class Point
+{
+  public:
+	Point();
+	Point(const float a, const float b);
+	Point(const Point &p);
+	Point &operator=(const Point &p);
+	~Point();
 
-	c = b;
-	
-	std::cout << a.getRawBits() << std::endl;
-	std::cout << b.getRawBits() << std::endl;
+  private:
+	const Fixed _x;
+	const Fixed _y;
+};
 
-	std::cout << c.getRawBits() << std::endl;
-
-	return (0);
+std::ostream &operator<<(std::ostream &o, const Point &p)
+{
+	o << "todo";
+	return o;
 }

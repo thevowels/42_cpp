@@ -1,30 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Point.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aphyo-ht <aphyo-ht@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/05/16 13:53:04 by aphyo-ht          #+#    #+#             */
-/*   Updated: 2026/05/16 13:56:42 by aphyo-ht         ###   ########.fr       */
+/*   Created: 2026/05/17 20:58:18 by aphyo-ht          #+#    #+#             */
+/*   Updated: 2026/05/17 21:21:05 by aphyo-ht         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
+#include "Point.hpp"
 
-#include "Fixed.hpp"
+Point::Point() : _x(Fixed(0)), _y(Fixed(0))
+{
+}
 
-int main(void){
-	Fixed a;
-	Fixed b(a);
-	Fixed c;
+Point::Point(const float a, const float b) : _x(Fixed(a)), _y(Fixed(b))
+{
+}
 
-	c = b;
-	
-	std::cout << a.getRawBits() << std::endl;
-	std::cout << b.getRawBits() << std::endl;
+Point::Point(const Point &p) : _x(p._x), _y(p._y)
+{
+}
 
-	std::cout << c.getRawBits() << std::endl;
-
-	return (0);
+Point &Point::operator=(const Point &p)
+{
+	if (this != &p)
+	{
+		*this = Point(p);
+	}
+	return (*this);
 }
