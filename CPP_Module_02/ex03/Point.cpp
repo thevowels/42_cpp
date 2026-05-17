@@ -6,7 +6,7 @@
 /*   By: aphyo-ht <aphyo-ht@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/17 20:58:18 by aphyo-ht          #+#    #+#             */
-/*   Updated: 2026/05/17 21:21:05 by aphyo-ht         ###   ########.fr       */
+/*   Updated: 2026/05/18 00:31:27 by aphyo-ht         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,4 +31,19 @@ Point &Point::operator=(const Point &p)
 		*this = Point(p);
 	}
 	return (*this);
+}
+
+Point::~Point()
+{
+}
+
+Fixed Point::getArea(Point a, Point b, Point c)
+{
+	Fixed area = ((a._x.toFloat() * (b._y.toFloat() - c._y.toFloat()))
+			+ (b._x.toFloat() * (c._y.toFloat() - a._y.toFloat()))
+			+ (c._x.toFloat() * (a._y.toFloat() - b._y.toFloat()))) / 2;
+	
+	if(area >= 0)
+		return (area);
+	return (area * -1);
 }

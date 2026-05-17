@@ -6,7 +6,7 @@
 /*   By: aphyo-ht <aphyo-ht@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/17 20:45:55 by aphyo-ht          #+#    #+#             */
-/*   Updated: 2026/05/17 21:22:38 by aphyo-ht         ###   ########.fr       */
+/*   Updated: 2026/05/18 00:24:19 by aphyo-ht         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ class Point
 	Point(const Point &p);
 	Point &operator=(const Point &p);
 	~Point();
-
+	static Fixed getArea(Point a, Point b, Point c);
   private:
 	const Fixed _x;
 	const Fixed _y;

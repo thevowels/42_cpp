@@ -6,7 +6,7 @@
 /*   By: aphyo-ht <aphyo-ht@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/14 16:30:31 by aphyo-ht          #+#    #+#             */
-/*   Updated: 2026/05/17 20:53:55 by aphyo-ht         ###   ########.fr       */
+/*   Updated: 2026/05/18 00:37:32 by aphyo-ht         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,6 +59,9 @@ class Fixed
 
 	static const Fixed& min(const Fixed& first, const Fixed& second);
 	static const Fixed& max(const Fixed& first, const Fixed& second);
+
+	// bsq comparison
+	bool operator==(int x) const;
 
   private:
 	int _fixedPointValue;

@@ -6,7 +6,7 @@
 /*   By: aphyo-ht <aphyo-ht@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/14 16:43:17 by aphyo-ht          #+#    #+#             */
-/*   Updated: 2026/05/17 20:06:38 by aphyo-ht         ###   ########.fr       */
+/*   Updated: 2026/05/18 00:38:29 by aphyo-ht         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -201,4 +201,9 @@ const Fixed &Fixed::max(const Fixed &first, const Fixed &second)
 	if (first._fixedPointValue < second._fixedPointValue)
 		return (second);
 	return (first);
+}
+
+bool Fixed::operator==(int x) const
+{
+	return (this->toFloat() == (float)x);
 }
