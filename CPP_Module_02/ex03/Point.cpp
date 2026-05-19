@@ -6,7 +6,7 @@
 /*   By: aphyo-ht <aphyo-ht@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/17 20:58:18 by aphyo-ht          #+#    #+#             */
-/*   Updated: 2026/05/18 00:31:27 by aphyo-ht         ###   ########.fr       */
+/*   Updated: 2026/05/19 20:58:09 by aphyo-ht         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,7 @@ Point &Point::operator=(const Point &p)
 
 Point::~Point()
 {
+	std::cout << "Destructor Called";
 }
 
 Fixed Point::getArea(Point a, Point b, Point c)
@@ -46,4 +47,23 @@ Fixed Point::getArea(Point a, Point b, Point c)
 	if(area >= 0)
 		return (area);
 	return (area * -1);
+}
+
+void Point::printBool(bool a)
+{
+	if(a)
+		std::cout << "TRUE";
+	else
+		std::cout << "FALSE";
+}
+
+void Point::printPosition(std::ostream &o) const
+{
+	o << "Position : " << _x.toFloat() << " , " << _y.toFloat() << " .";
+}
+
+std::ostream &operator<<(std::ostream &o, const Point &p)
+{
+	p.printPosition(o);
+	return o;
 }

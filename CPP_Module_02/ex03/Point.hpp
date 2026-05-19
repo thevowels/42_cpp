@@ -6,7 +6,7 @@
 /*   By: aphyo-ht <aphyo-ht@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/17 20:45:55 by aphyo-ht          #+#    #+#             */
-/*   Updated: 2026/05/18 00:24:19 by aphyo-ht         ###   ########.fr       */
+/*   Updated: 2026/05/19 21:02:49 by aphyo-ht         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,13 +23,12 @@ class Point
 	Point &operator=(const Point &p);
 	~Point();
 	static Fixed getArea(Point a, Point b, Point c);
+	static void printBool(bool b);
+	void printPosition(std::ostream &o) const;
+	
   private:
 	const Fixed _x;
 	const Fixed _y;
 };
 
-std::ostream &operator<<(std::ostream &o, const Point &p)
-{
-	o << "todo";
-	return o;
-}
+std::ostream &operator<<(std::ostream &o, const Point &p);

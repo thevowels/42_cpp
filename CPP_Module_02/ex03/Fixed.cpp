@@ -6,7 +6,7 @@
 /*   By: aphyo-ht <aphyo-ht@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/14 16:43:17 by aphyo-ht          #+#    #+#             */
-/*   Updated: 2026/05/18 00:38:29 by aphyo-ht         ###   ########.fr       */
+/*   Updated: 2026/05/19 22:18:16 by aphyo-ht         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,19 @@ Fixed::Fixed(const Fixed &other)
 	// std::cout << "Copy constructor called" << std::endl;
 	*this = other;
 }
+
+Fixed::Fixed(const int value)
+{
+	// std::cout << "Int constructor called." << std::endl;
+	this->_fixedPointValue = value << this->_fractionalBits;
+}
+
+Fixed::Fixed(const float value)
+{
+	// std::cout << "Float constructor called." << std::endl;
+	this->_fixedPointValue = roundf(value * (1 << this->_fractionalBits));
+}
+
 
 Fixed &Fixed::operator=(const Fixed &other)
 {
@@ -59,17 +72,6 @@ int		toInt(void) const;
 
 */
 
-Fixed::Fixed(const int value)
-{
-	// std::cout << "Int constructor called." << std::endl;
-	this->_fixedPointValue = value << this->_fractionalBits;
-}
-
-Fixed::Fixed(const float value)
-{
-	// std::cout << "Float constructor called." << std::endl;
-	this->_fixedPointValue = roundf(value * (1 << this->_fractionalBits));
-}
 
 float Fixed::toFloat(void) const
 {
