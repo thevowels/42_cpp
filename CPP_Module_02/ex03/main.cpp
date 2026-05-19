@@ -6,7 +6,7 @@
 /*   By: aphyo-ht <aphyo-ht@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/16 13:53:04 by aphyo-ht          #+#    #+#             */
-/*   Updated: 2026/05/19 21:11:39 by aphyo-ht         ###   ########.fr       */
+/*   Updated: 2026/05/19 22:54:41 by aphyo-ht         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,25 +20,22 @@ int	main(void)
 
 	Point A, B, C, D;
 	
-	A = Point(1,2);
-
-	// having segFaults in Fixed
-	// B = Point(2,0);
-	// C = Point(0,3);
-	// D = Point(1,1);
-
-	// std::cout << "A " << A;
-	// std::cout << "B " << B;
-	// std::cout << "C " << C;
-	// std::cout << "D " << D;
+	// A = Point(1,2);
+	B = Point(2,0);
+	C = Point(0,3);
+	D = Point(1,1);
 	
-	// Point::printBool( bsp(A,B,C,D));
+	Point::printBool( bsp(A,B,C,D));
+	std::cout << std::endl;
 
-	// Point::printBool( bsp(A,B, D,C));
+	Point::printBool( bsp(A,B, D,C));
+	std::cout << std::endl;
 
-	// Point::printBool( bsp(A,B,A,D));
+	Point::printBool( bsp(A,B,A,D));
+	std::cout << std::endl;
 
-	// Point::printBool( bsp(A,B,C,A));
+	Point::printBool( bsp(A,B,C,A));
+	std::cout << std::endl;
 
 	
 }

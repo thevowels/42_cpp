@@ -6,7 +6,7 @@
 /*   By: aphyo-ht <aphyo-ht@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/14 16:43:17 by aphyo-ht          #+#    #+#             */
-/*   Updated: 2026/05/19 22:18:16 by aphyo-ht         ###   ########.fr       */
+/*   Updated: 2026/05/19 22:23:20 by aphyo-ht         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,9 +39,10 @@ Fixed::Fixed(const float value)
 Fixed &Fixed::operator=(const Fixed &other)
 {
 	// std::cout << "Copy assignment operator called" << std::endl;
-	if (this != &other)
+	if (this != &other) {
 		this->_fixedPointValue = other.getRawBits();
-	return (*this);
+	}
+	return *this;
 }
 
 Fixed::~Fixed()
