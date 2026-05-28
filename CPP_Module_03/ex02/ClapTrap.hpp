@@ -6,7 +6,7 @@
 /*   By: aphyo-ht <aphyo-ht@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/27 10:42:55 by aphyo-ht          #+#    #+#             */
-/*   Updated: 2026/05/28 23:12:26 by aphyo-ht         ###   ########.fr       */
+/*   Updated: 2026/05/29 02:42:29 by aphyo-ht         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,13 +20,13 @@ class ClapTrap{
         ClapTrap(std::string name);
         ClapTrap(const ClapTrap& other);
         ClapTrap& operator=(const ClapTrap& other);
-        ~ClapTrap();
+        virtual ~ClapTrap();
         void attack(const std::string& target);
         void takeDamage(unsigned int amount);
         void beRepaired(unsigned int amount);
 
 
-    private:
+    protected:
         std::string _name;
         int         _hp;
         int         _ep;
