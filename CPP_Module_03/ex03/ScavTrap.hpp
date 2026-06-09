@@ -6,7 +6,7 @@
 /*   By: aphyo-ht <aphyo-ht@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/28 22:58:42 by aphyo-ht          #+#    #+#             */
-/*   Updated: 2026/05/29 02:47:47 by aphyo-ht         ###   ########.fr       */
+/*   Updated: 2026/05/29 16:56:45 by aphyo-ht         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 #include "ClapTrap.hpp"
 
-class ScavTrap: public ClapTrap{
+class ScavTrap: virtual public ClapTrap{
 	public:
 		ScavTrap();
 		ScavTrap(std::string name);

@@ -6,7 +6,7 @@
 /*   By: aphyo-ht <aphyo-ht@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/28 22:58:42 by aphyo-ht          #+#    #+#             */
-/*   Updated: 2026/05/29 02:57:46 by aphyo-ht         ###   ########.fr       */
+/*   Updated: 2026/06/09 09:19:31 by aphyo-ht         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,6 @@ class FragTrap: public ClapTrap{
 		FragTrap(const FragTrap& other);
 		FragTrap& operator=(const FragTrap& other);
 		virtual ~FragTrap();
-		void highFivesGuys();
+		void highFiveGuys();
 };
 

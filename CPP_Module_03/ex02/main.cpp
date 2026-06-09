@@ -6,7 +6,7 @@
 /*   By: aphyo-ht <aphyo-ht@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/27 11:07:31 by aphyo-ht          #+#    #+#             */
-/*   Updated: 2026/05/29 03:01:26 by aphyo-ht         ###   ########.fr       */
+/*   Updated: 2026/06/09 09:19:35 by aphyo-ht         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ int main(void){
 
 	C.attack("Enemy");
 	A.attack("John Doe");
-	E.highFivesGuys();
+	E.highFiveGuys();
     
     return (0);
 }

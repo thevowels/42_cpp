@@ -6,7 +6,7 @@
 /*   By: aphyo-ht <aphyo-ht@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/28 22:58:45 by aphyo-ht          #+#    #+#             */
-/*   Updated: 2026/05/29 03:00:35 by aphyo-ht         ###   ########.fr       */
+/*   Updated: 2026/06/09 09:19:27 by aphyo-ht         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,6 +46,6 @@ FragTrap::~FragTrap(){
 	std::cout << "FragTrap Destructor for " << this->_name << " called!" << std::endl;
 }
 
-void FragTrap::highFivesGuys(){
+void FragTrap::highFiveGuys(){
 	std::cout << "Hello lets do high fives!!!" << std::endl;
 }
