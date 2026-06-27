@@ -6,44 +6,34 @@
 /*   By: aphyo-ht <aphyo-ht@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/25 09:35:36 by aphyo-ht          #+#    #+#             */
-/*   Updated: 2026/06/27 20:29:35 by aphyo-ht         ###   ########.fr       */
+/*   Updated: 2026/06/25 09:35:45 by aphyo-ht         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Animal.hpp"
 
-Animal::Animal():_type("Untouched")
-{
+Animal::Animal() : _type("Untouched") {
   std::cout << "Animal default constructor Called." << std::endl;
 }
 
-Animal::Animal(const Animal& other)
-{
+Animal::Animal(const Animal &other) {
   *this = other;
   std::cout << "Animal Copy Constructor Called." << std::endl;
 }
 
-Animal& Animal::operator=(const Animal& other)
-{
+Animal &Animal::operator=(const Animal &other) {
   std::cout << "Animal Assignment operator called." << std::endl;
-  if(this == &other)
+  if (this == &other)
     return *this;
-  
+
   this->_type = other._type;
   return *this;
 }
 
-Animal::~Animal()
-{
-  std::cout << "Animal Destructor called." << std::endl;
-}
+Animal::~Animal() { std::cout << "Animal Destructor called." << std::endl; }
 
-void Animal::makeSound(void) const
-{
+void Animal::makeSound(void) const {
   std::cout << "Animal abstract sound." << std::endl;
 }
 
-std::string Animal::getType(void) const
-{
-  return this->_type;
-}
+std::string Animal::getType(void) const { return this->_type; }
