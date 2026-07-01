@@ -5,41 +5,38 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: aphyo-ht <aphyo-ht@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/06/25 10:11:56 by aphyo-ht          #+#    #+#             */
-/*   Updated: 2026/06/25 10:11:57 by aphyo-ht         ###   ########.fr       */
+/*   Created: 2026/06/30 13:56:52 by aphyo-ht          #+#    #+#             */
+/*   Updated: 2026/07/01 10:10:48 by aphyo-ht         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+
 #include "Cat.hpp"
 
-Cat::Cat(): Animal()
+Cat::Cat(): Animal("Cat")
 {
-  this->_type = "Cat";
-  std::cout << "Cat Default constructor Called." << std::endl;
+  std::cout << "Cat Default constructor called! " << std::endl;
 }
 
-Cat::Cat(const Cat& other): Animal()
+Cat::Cat(const Cat& other): Animal(other)
 {
-  std::cout << "Cat Copy constructor called!" << std::endl;
-  *this = other;
+  std::cout << "Cat Copy Constructor called! " << std::endl;
 }
 
-Cat &Cat::operator=(const Cat& other)
+Cat& Cat::operator =(const Cat& other)
 {
-  if(this == &other)
-  {
-    return *this;
-  }
-  this->_type = other._type;
-
+  std::cout << "Cat Copy assignment Operator Called." << std::endl;
+  if(this != &other)
+    this->_type = other._type;
   return *this;
 }
 
 Cat::~Cat()
 {
-  std::cout << "Cat Deconstructor called. " << std::endl;
+  std::cout << "Cat Destructor Called." << std::endl;
 }
 
-void Cat::makeSound(void) const {
-  std::cout << "Cat says: Meow . "<< std::endl;
+void Cat::makeSound() const
+{
+  std::cout << "Cat: Meow!" << std::endl;
 }
