@@ -6,17 +6,16 @@
 /*   By: aphyo-ht <aphyo-ht@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/30 13:56:52 by aphyo-ht          #+#    #+#             */
-/*   Updated: 2026/07/03 16:59:16 by aphyo-ht         ###   ########.fr       */
+/*   Updated: 2026/07/03 17:10:18 by aphyo-ht         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 
 #include "Cat.hpp"
 
-Cat::Cat(): Animal("Cat"), _brain(NULL)
+Cat::Cat(): Animal("Cat"), _brain(new Brain())
 {
   std::cout << "Cat Default constructor called! " << std::endl;
-  this->_brain = new Brain();
 }
 
 Cat::Cat(const Cat& other): Animal(other)

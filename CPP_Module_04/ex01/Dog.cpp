@@ -6,16 +6,15 @@
 /*   By: aphyo-ht <aphyo-ht@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/30 08:47:03 by aphyo-ht          #+#    #+#             */
-/*   Updated: 2026/07/03 16:47:56 by aphyo-ht         ###   ########.fr       */
+/*   Updated: 2026/07/03 17:10:10 by aphyo-ht         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Dog.hpp"
 
-Dog::Dog() : Animal("Dog")
+Dog::Dog() : Animal("Dog"), _brain(new Brain())
 {
     std::cout << "Dog default constructor called" << std::endl;
-    _brain = new Brain();
 }
 
 Dog::Dog(const Dog& other) : Animal(other)
