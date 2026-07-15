@@ -6,17 +6,20 @@
 /*   By: aphyo-ht <aphyo-ht@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/03 17:18:50 by aphyo-ht          #+#    #+#             */
-/*   Updated: 2026/07/09 14:17:29 by aphyo-ht         ###   ########.fr       */
+/*   Updated: 2026/07/15 14:58:33 by aphyo-ht         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 
 #include <iostream>
-#include "ICharacter.hpp"
+
+class ICharacter;
+
 class AMateria
 {
     public:
+        AMateria();
         AMateria(std::string const & type);
         AMateria(const AMateria &other);
         virtual ~AMateria();
@@ -26,6 +29,4 @@ class AMateria
         virtual void use(ICharacter& target) = 0;
     protected:
         std::string _type;
-    private:
-        AMateria();
 };

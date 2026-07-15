@@ -6,12 +6,13 @@
 /*   By: aphyo-ht <aphyo-ht@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/09 14:18:10 by aphyo-ht          #+#    #+#             */
-/*   Updated: 2026/07/13 16:37:42 by aphyo-ht         ###   ########.fr       */
+/*   Updated: 2026/07/15 13:40:35 by aphyo-ht         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 
+#include <iostream>
 #include "ICharacter.hpp"
 #include "AMateria.hpp"
 

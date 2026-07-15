@@ -6,29 +6,32 @@
 /*   By: aphyo-ht <aphyo-ht@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/09 14:31:04 by aphyo-ht          #+#    #+#             */
-/*   Updated: 2026/07/13 18:30:43 by aphyo-ht         ###   ########.fr       */
+/*   Updated: 2026/07/15 18:02:30 by aphyo-ht         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Character.hpp"
 
-
-Character::Character(): _name("Default")
+void Character::init()
 {
-    std::cout << "Character default constructor called" << std::endl;
-    _trash = new Node();
     for (int i = 0; i < 4; i++)
-        _inventory[i] = NULL;
+    _inventory[i] = NULL;
+
 }
 
-Character::Character(const std::string &name): _name(name)
+Character::Character(): _name("Default") , _trash(new Node)
+{
+    init();
+    std::cout << "Character default constructor called" << std::endl;
+}
+
+Character::Character(const std::string &name): _name(name), _trash(new Node)
 {
     std::cout << "Character parameterized constructor called" << std::endl;
-    for (int i = 0; i < 4; i++)
-        _inventory[i] = NULL;
+    init();   
 }
 
-Character::Character(const Character &other): _name(other._name)
+Character::Character(const Character &other): _name(other._name), _trash(new Node)
 {
     std::cout << "Character copy constructor called" << std::endl;
     for (int i = 0; i < 4; i++)
@@ -48,12 +51,24 @@ Character::~Character()
         if (_inventory[i])
             delete _inventory[i];
     }
+    delete(_trash);
 }
 
 Character& Character::operator=(const Character &other)
 {
+    // Todo not finish yet ?
+    if(this == &other)
+        return *this;
     std::cout << "Assignment Operator overload Character!" << std::endl;
     _name = other._name;
+    delete _trash;
+    this->_trash = new Node();
+    for(int i = 0; i < 4; i++)
+    {
+        if(_inventory[i])
+            delete _inventory[i];
+        _inventory[i] = other._inventory[i]->clone();
+    }
     return (*this);
 }
 
@@ -67,7 +82,10 @@ void Character::equip(AMateria *m)
     if(getEmptySlot())
         *(getEmptySlot()) = m;
     else
+    {
+        _trash->push(m);
         std::cout << "All Materia Slots are full! " << std::endl;
+    }
 }
 
 void Character::unequip(int index)

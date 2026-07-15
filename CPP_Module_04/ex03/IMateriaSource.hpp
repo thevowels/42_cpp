@@ -1,32 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Node.hpp                                           :+:      :+:    :+:   */
+/*   IMateriaSource.hpp                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aphyo-ht <aphyo-ht@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/07/09 17:55:46 by aphyo-ht          #+#    #+#             */
-/*   Updated: 2026/07/12 01:04:51 by aphyo-ht         ###   ########.fr       */
+/*   Created: 2026/07/15 09:51:54 by aphyo-ht          #+#    #+#             */
+/*   Updated: 2026/07/15 09:52:20 by aphyo-ht         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 
-#include <iostream>
+#include "AMateria.hpp"
 
-class Node{
-
-    private:
-        char* _val;
-        Node* _next;
-        Node();
-
-    public:
-        Node(char *val);
-        Node(const Node& other);
-        Node& operator=(const Node& other);
-        ~Node();
-        Node* getLast();
-        void push(char *val);
-
+class IMateriaSource
+{
+public:
+    virtual ~IMateriaSource() {}
+    virtual void learnMateria(AMateria *) = 0;
+    virtual AMateria *createMateria(std::string const &type) = 0;
 };

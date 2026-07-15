@@ -6,7 +6,7 @@
 /*   By: aphyo-ht <aphyo-ht@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/09 14:31:02 by aphyo-ht          #+#    #+#             */
-/*   Updated: 2026/07/13 16:36:14 by aphyo-ht         ###   ########.fr       */
+/*   Updated: 2026/07/15 18:01:50 by aphyo-ht         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,10 +29,10 @@ class Character: public ICharacter
         virtual void equip(AMateria* m);
         virtual void unequip(int index);
         virtual void use(int index, ICharacter &target);
-        AMateria** getEmptySlot();
-
     private:
+        AMateria** getEmptySlot();
         std::string _name;
         AMateria* _inventory[4];
         Node* _trash;
+        void init();
 };
