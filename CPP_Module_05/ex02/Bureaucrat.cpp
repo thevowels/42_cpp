@@ -6,12 +6,12 @@
 /*   By: aphyo-ht <aphyo-ht@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/24 23:57:38 by aphyo-ht          #+#    #+#             */
-/*   Updated: 2026/09/28 17:06:38 by aphyo-ht         ###   ########.fr       */
+/*   Updated: 2026/10/03 22:54:15 by aphyo-ht         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
-#include "Form.hpp"
+#include "AForm.hpp"
 
 #include <iostream>
 #include <exception>
@@ -79,7 +79,7 @@ void Bureaucrat::demote()
 	this->_grade += 1;
 }
 
-void Bureaucrat::signForm(Form &form)
+void Bureaucrat::signForm(AForm &form)
 {
 	// form.beSigned()
 	try

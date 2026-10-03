@@ -2,7 +2,7 @@
 
 #include <string>
 
-class Form;
+class AForm;
 // Default constructor 1
 // Copy Constructor 
 // Copy Assignment Operator 1
@@ -22,7 +22,7 @@ class Bureaucrat {
 		int	getGrade(void) const;
 		void promote(void);
 		void demote(void);
-		void signForm(Form &form);
+		void signForm(AForm &form);
 		class GradeTooHighException : public std::exception{
 			public:
 				virtual const char * what() const throw();

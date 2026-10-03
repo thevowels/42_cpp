@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Form.hpp                                           :+:      :+:    :+:   */
+/*   AForm.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aphyo-ht <aphyo-ht@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -16,7 +16,7 @@
 
 class Bureaucrat;
 
-class Form
+class AForm
 {
 private:
     const int _sGrade;
@@ -25,11 +25,11 @@ private:
     bool _isSigned;
 
 public:
-    Form();
-    Form(int sGrade, int eGrade, std::string name);
-    Form(const Form &other);
-    ~Form();
-    Form &operator=(const Form &other);
+    AForm();
+    AForm(int sGrade, int eGrade, std::string name);
+    AForm(const AForm &other);
+    ~AForm();
+    AForm &operator=(const AForm &other);
     void beSigned(const Bureaucrat &other);
 
     std::string getName() const;
@@ -38,4 +38,4 @@ public:
     int getEGrade() const;
 };
 
-std::ostream &operator<<(std::ostream &o, const Form* f);
+std::ostream &operator<<(std::ostream &o, const AForm* f);

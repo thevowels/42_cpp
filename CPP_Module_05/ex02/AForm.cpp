@@ -1,14 +1,14 @@
-#include "Form.hpp"
+#include "AForm.hpp"
 #include "Bureaucrat.hpp"
 
 #include <iostream>
 
-Form::Form(): _sGrade(42), _eGrade(42),
+AForm::AForm(): _sGrade(42), _eGrade(42),
                 _name("Default"), _isSigned(false){
-    std::cout << "Form Default constructor" << std::endl;
+    std::cout << "AForm Default constructor" << std::endl;
 }
 
-Form::Form(int sGrade, int eGrade, std::string name): _sGrade(sGrade), _eGrade(eGrade),
+AForm::AForm(int sGrade, int eGrade, std::string name): _sGrade(sGrade), _eGrade(eGrade),
             _name(name), _isSigned(false){
     if(sGrade < 1 || eGrade < 1)
 	{
@@ -16,29 +16,29 @@ Form::Form(int sGrade, int eGrade, std::string name): _sGrade(sGrade), _eGrade(e
 	}
 	else if(sGrade > 150 || eGrade > 150)
 		throw Bureaucrat::GradeTooLowException();
-    std::cout << "Form Constructor" << std::endl;
+    std::cout << "AForm Constructor" << std::endl;
 }
 
-Form::Form(const Form &other): _sGrade(other._sGrade), _eGrade(other._eGrade),
+AForm::AForm(const AForm &other): _sGrade(other._sGrade), _eGrade(other._eGrade),
                                 _name(other._name), _isSigned(other._isSigned){
-    std::cout << "Form Copy Constructor" << std::endl;
+    std::cout << "AForm Copy Constructor" << std::endl;
 }
 
-Form::~Form()
+AForm::~AForm()
 {
-    std::cout << "Form Destructor" << std::endl;
+    std::cout << "AForm Destructor" << std::endl;
 }
 
-Form& Form::operator=(const Form &other){
+AForm& AForm::operator=(const AForm &other){
     if(this != &other)
     {
-        this->~Form();
-        ::new (this) Form(other);
+        this->~AForm();
+        ::new (this) AForm(other);
     }
     return *this;
 }
 
-void Form::beSigned(const Bureaucrat &other){
+void AForm::beSigned(const Bureaucrat &other){
     if(this->_eGrade >= other.getGrade())
     {
         this->_isSigned = true;
@@ -47,27 +47,27 @@ void Form::beSigned(const Bureaucrat &other){
         throw Bureaucrat::GradeTooLowException();
 }
 
-std::string Form::getName() const
+std::string AForm::getName() const
 {
     return this->_name;
 }
 
-bool Form::getIsSigned() const
+bool AForm::getIsSigned() const
 {
     return this->_isSigned;
 }
 
-int Form::getSGrade() const
+int AForm::getSGrade() const
 {
     return this->_sGrade;
 }
 
-int Form::getEGrade() const
+int AForm::getEGrade() const
 {
     return this->_eGrade;
 }
 
-std::ostream& operator<<(std::ostream& o, const Form* f)
+std::ostream& operator<<(std::ostream& o, const AForm* f)
 {
     o << f->getName() << " " << f->getIsSigned() << " " << f->getSGrade() << " " << f->getEGrade() <<  std::endl;
     return (o);
