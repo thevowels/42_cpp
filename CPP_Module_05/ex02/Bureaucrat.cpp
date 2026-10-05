@@ -6,7 +6,7 @@
 /*   By: aphyo-ht <aphyo-ht@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/24 23:57:38 by aphyo-ht          #+#    #+#             */
-/*   Updated: 2026/10/03 22:54:15 by aphyo-ht         ###   ########.fr       */
+/*   Updated: 2026/10/06 03:39:44 by aphyo-ht         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,6 +91,18 @@ void Bureaucrat::signForm(AForm &form)
 	{
 		std::cout << this->_name << " couldn't sign " << form.getName() << " because " << e.what() << std::endl;
 	}
+}
+void Bureaucrat::executeForm(AForm const & form) const
+{
+	try{
+		form.execute(*this);
+		std::cout << this->_name << " executed " << form.getName() << std::endl; 	
+	}catch(const std::exception &e)
+	{
+		std::cout << this->_name << " can't execute " << form.getName() << std::endl
+			<< e.what()<< std::endl;
+	}
+		
 }
 
 const char *Bureaucrat::GradeTooHighException::what(void) const throw()

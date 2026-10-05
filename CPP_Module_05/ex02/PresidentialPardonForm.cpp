@@ -1,5 +1,3 @@
-#pragma once
-
 #include "PresidentialPardonForm.hpp"
 
 PresidentialPardonForm::PresidentialPardonForm() : AForm(25, 5,
@@ -18,6 +16,13 @@ PresidentialPardonForm::PresidentialPardonForm(const PresidentialPardonForm &oth
 }
 PresidentialPardonForm::~PresidentialPardonForm()
 {
+}
+
+void PresidentialPardonForm::execute(Bureaucrat const & executor) const
+{
+	AForm::execute(executor);
+
+	std::cout << this->_target << "has been pardoned by Zaphod Beeblebrox" << std::endl;
 }
 
 PresidentialPardonForm &PresidentialPardonForm::operator=(const PresidentialPardonForm &other)

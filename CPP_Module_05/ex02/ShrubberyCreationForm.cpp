@@ -1,6 +1,7 @@
 #include "ShrubberyCreationForm.hpp"
+#include "Bureaucrat.hpp"
 #include <iostream>
-
+#include <fstream>
 
 ShrubberyCreationForm::ShrubberyCreationForm(): AForm(145,137,"ShrubberyCreationForm") ,_target("Shrubeery Default Target"){
 
@@ -18,6 +19,25 @@ ShrubberyCreationForm::ShrubberyCreationForm(const ShrubberyCreationForm& other)
 }
 
 ShrubberyCreationForm::~ShrubberyCreationForm(){
+
+}
+
+void ShrubberyCreationForm::execute(Bureaucrat const & executor) const
+{
+	AForm::execute(executor);
+
+	std::string filename = this->_target + "_shrubbery";
+	std::ofstream file(filename.c_str());
+
+	if(!file.is_open())
+	{
+		std::cerr<< "Cannot open file : " << filename <<  std::endl;
+		return;
+	}
+	file << "  _.._\n"
+		 << " (.__.)\n"
+		 << "   ||\n";
+	file.close();
 
 }
 
