@@ -12,10 +12,10 @@ AForm::AForm(int sGrade, int eGrade, std::string name): _sGrade(sGrade), _eGrade
             _name(name), _isSigned(false){
     if(sGrade < 1 || eGrade < 1)
 	{
-		throw Bureaucrat::GradeTooHighException();
+		throw AForm::GradeTooHighException();
 	}
 	else if(sGrade > 150 || eGrade > 150)
-		throw Bureaucrat::GradeTooLowException();
+		throw AForm::GradeTooLowException();
     std::cout << "AForm Constructor" << std::endl;
 }
 
@@ -40,7 +40,7 @@ void AForm::beSigned(const Bureaucrat &other){
         this->_isSigned = true;
     }
     else
-        throw Bureaucrat::GradeTooLowException();
+        throw AForm::GradeTooLowException();
 }
 
 std::string AForm::getName() const

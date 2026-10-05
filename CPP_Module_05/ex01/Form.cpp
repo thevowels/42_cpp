@@ -12,10 +12,10 @@ Form::Form(int sGrade, int eGrade, std::string name): _sGrade(sGrade), _eGrade(e
             _name(name), _isSigned(false){
     if(sGrade < 1 || eGrade < 1)
 	{
-		throw Bureaucrat::GradeTooHighException();
+		throw Form::GradeTooHighException();
 	}
 	else if(sGrade > 150 || eGrade > 150)
-		throw Bureaucrat::GradeTooLowException();
+		throw Form::GradeTooLowException();
     std::cout << "Form Constructor" << std::endl;
 }
 
@@ -44,7 +44,7 @@ void Form::beSigned(const Bureaucrat &other){
         this->_isSigned = true;
     }
     else
-        throw Bureaucrat::GradeTooLowException();
+        throw Form::GradeTooLowException();
 }
 
 std::string Form::getName() const
