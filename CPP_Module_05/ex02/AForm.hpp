@@ -37,6 +37,15 @@ public:
     int getSGrade() const;
     int getEGrade() const;
 
+	class GradeTooHighException: public std::exception{
+		public:
+			virtual const char * what() const throw();
+	};
+	class GradeTooLowException: public std::exception{
+		public:
+			virtual	const char* what() const throw();
+	};
+
 	// ex02 
 	virtual void execute(Bureaucrat const & executor) = 0;
 };

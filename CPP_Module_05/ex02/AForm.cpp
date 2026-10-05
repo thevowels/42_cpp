@@ -29,12 +29,8 @@ AForm::~AForm()
     std::cout << "AForm Destructor" << std::endl;
 }
 
+// As abstract I can't reconstruct object. 
 AForm& AForm::operator=(const AForm &other){
-    if(this != &other)
-    {
-        this->~AForm();
-        ::new (this) AForm(other);
-    }
     return *this;
 }
 
@@ -66,6 +62,16 @@ int AForm::getEGrade() const
 {
     return this->_eGrade;
 }
+const char *AForm::GradeTooHighException::what(void) const throw()
+{
+	return "Form Exception: Grade Too Low";
+}
+
+const char *AForm::GradeTooLowException::what(void) const throw()
+{
+	return "Form Exception: Grade Too High";
+}
+
 
 std::ostream& operator<<(std::ostream& o, const AForm* f)
 {

@@ -6,7 +6,7 @@
 /*   By: aphyo-ht <aphyo-ht@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/28 12:06:51 by aphyo-ht          #+#    #+#             */
-/*   Updated: 2026/09/28 17:11:35 by aphyo-ht         ###   ########.fr       */
+/*   Updated: 2026/10/06 02:39:11 by aphyo-ht         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,15 @@ public:
     bool getIsSigned() const;
     int getSGrade() const;
     int getEGrade() const;
+
+	class GradeTooHighException: public std::exception{
+		public:
+			virtual const char * what() const throw();
+	};
+	class GradeTooLowException: public std::exception{
+		public:
+			virtual	const char* what() const throw();
+	};
 };
 
 std::ostream &operator<<(std::ostream &o, const Form* f);

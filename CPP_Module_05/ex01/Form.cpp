@@ -67,6 +67,16 @@ int Form::getEGrade() const
     return this->_eGrade;
 }
 
+const char *Form::GradeTooHighException::what(void) const throw()
+{
+	return "Form Exception: Grade Too Low";
+}
+
+const char *Form::GradeTooLowException::what(void) const throw()
+{
+	return "Form Exception: Grade Too High";
+}
+
 std::ostream& operator<<(std::ostream& o, const Form* f)
 {
     o << f->getName() << " " << f->getIsSigned() << " " << f->getSGrade() << " " << f->getEGrade() <<  std::endl;
