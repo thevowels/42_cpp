@@ -6,7 +6,7 @@
 /*   By: aphyo-ht <aphyo-ht@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/24 23:57:32 by aphyo-ht          #+#    #+#             */
-/*   Updated: 2026/09/28 17:10:12 by aphyo-ht         ###   ########.fr       */
+/*   Updated: 2026/10/18 17:31:01 by aphyo-ht         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,13 +22,25 @@ int main(void)
 	Bureaucrat *b = new Bureaucrat();
 	Form	*f = new Form();
 
-	b->signForm(*f);
+	try{
+		b->signForm(*f);
+	} catch (std::exception & e)
+	{
+		std::cout <<"Catched Exception "<<  e.what() << std::endl;
+
+	}
 
 	Bureaucrat *b1 = new Bureaucrat("B1", 3);
 
 	Form	*f1 = new Form(5,4,"Form?");
-	b1->signForm(*f1);
+	try{
+		b1->signForm(*f1);
 
+	} catch (std::exception & e)
+	{
+		std::cout <<"Catched Exception "<<  e.what() << std::endl;
+
+	}
 	std::cout << b1;
 	std::cout << f1;
 	

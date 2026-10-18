@@ -6,7 +6,7 @@
 /*   By: aphyo-ht <aphyo-ht@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/24 23:57:32 by aphyo-ht          #+#    #+#             */
-/*   Updated: 2026/09/25 00:14:00 by aphyo-ht         ###   ########.fr       */
+/*   Updated: 2026/10/18 17:28:11 by aphyo-ht         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,7 @@ int main(void)
 	try{
 		e1 = new Bureaucrat("E1", 0);
 		std::cout << e1;
+		delete(e1);
 	}catch(std::exception &e)
 	{
 		std::cout <<"Catched Exception "<<  e.what() << std::endl;
@@ -36,6 +37,7 @@ int main(void)
 	try {
 		e1 = new Bureaucrat("E1", 151);
 		std::cout << e1;
+		delete(e1);
 	}catch (std::exception &e)
 	{
 		std::cout << "Catched Exception " << e.what() << std::endl;
@@ -48,7 +50,8 @@ int main(void)
 		std::cout << "Catched Exception " << e.what() << std::endl;
 	}
 	
-
-	// delete(dc);
+	delete(dc);
+	delete(c1);
+	delete(e1);
 
 }

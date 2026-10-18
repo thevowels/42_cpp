@@ -6,7 +6,7 @@
 /*   By: aphyo-ht <aphyo-ht@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/24 23:57:32 by aphyo-ht          #+#    #+#             */
-/*   Updated: 2026/10/06 05:24:01 by aphyo-ht         ###   ########.fr       */
+/*   Updated: 2026/10/18 17:26:51 by aphyo-ht         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,4 +27,7 @@ int main(void)
 
 	b->signForm(*a);
 	b->executeForm(*a);
+
+	delete(a);
+	delete(b);
 }
