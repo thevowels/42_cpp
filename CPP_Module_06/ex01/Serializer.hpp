@@ -1,0 +1,18 @@
+#pragma once
+
+#include <iostream>
+#include <stdint.h>
+
+#include "Data.hpp"
+
+class Serializer{
+	private:
+
+	public:
+		Serializer();
+		Serializer(Serializer& other);
+		~Serializer();
+		Serializer& operator=(Serializer& other);
+		static uintptr_t serialize(Data* ptr);
+		static Data* deserialize(uintptr_t raw);
+};
