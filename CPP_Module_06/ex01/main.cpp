@@ -18,6 +18,4 @@ int main(void)
 	std::cout << "Serialzied Raw Value: " << std::hex << t << std::dec<< std::endl;
 	std::cout << "Deserialized Raw value: "<< e << std::endl;
 	std::cout << 234 << std::endl;
-
-
 }
