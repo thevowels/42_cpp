@@ -160,22 +160,6 @@ static e_type	detectType(const std::string &str)
 	return (TYPE_INVALID);
 }
 
-static void	printChar(const std::string &str)
-{
-	char	c;
-	int		i;
-	float	f;
-	double	d;
-
-	c = str[0];
-	i = static_cast<int>(c);
-	f = static_cast<float>(c);
-	d = static_cast<double>(c);
-	std::cout << "char: " << c << std::endl;
-	std::cout << "int: " << i << std::endl;
-	std::cout << "float: " << f << std::endl;
-	std::cout << "double: " << d << std::endl;
-}
 
 static void	charLine(const double d)
 {
@@ -201,47 +185,65 @@ static void	intLine(const double d)
 
 static void floatLine(const double d)
 {
-	std::cout<< "float: " << static_cast<float>(d) << 'f'<< std::endl;
+	std::cout<< "float: " << std::fixed<< std::setprecision(1) << static_cast<float>(d) << 'f'<< std::endl;
 }
 
 static void doubleLine(const double d)
 {
-	std::cout << "double: " << d << std::endl;
+	std::cout << "double: " <<std::fixed << std::setprecision(1)<<  d << std::endl;
 }
-
-
-static void	printInt(const std::string &str)
+static void printNumeric(const std::string &str)
 {
-	double	val;
-
-	val = std::strtod(str.c_str(), NULL);
-	charLine(val);
-	intLine(val);
-	floatLine(val);
-	doubleLine(val);
+	double	d = std::strtod(str.c_str(), NULL);
+	charLine(d);
+	intLine(d);
+	floatLine(d);
+	doubleLine(d);
 }
-
-static void	printFloat(const std::string &str)
+static void	printChar(const std::string &str)
 {
-	double	val;
+	char	c;
+	double	d;
 
-	val = std::strtod(str.c_str(), NULL);
-	charLine(val);
-	intLine(val);
-	floatLine(val);
-	doubleLine(val);
+	c = str[0];
+	d = static_cast<double>(c);
+	intLine(d);
+	floatLine(d);
+	doubleLine(d);
 }
 
-static void	printDouble(const std::string &str)
-{
-	double	val;
+// static void	printInt(const std::string &str)
+// {
+// 	double	val;
 
-	val = std::strtod(str.c_str(), NULL);
-	charLine(val);
-	intLine(val);
-	floatLine(val);
-	doubleLine(val);
-}
+// 	val = std::strtod(str.c_str(), NULL);
+// 	charLine(val);
+// 	intLine(val);
+// 	floatLine(val);
+// 	doubleLine(val);
+// }
+
+// static void	printFloat(const std::string &str)
+// {
+// 	double	val;
+
+// 	val = std::strtod(str.c_str(), NULL);
+// 	charLine(val);
+// 	intLine(val);
+// 	floatLine(val);
+// 	doubleLine(val);
+// }
+
+// static void	printDouble(const std::string &str)
+// {
+// 	double	val;
+
+// 	val = std::strtod(str.c_str(), NULL);
+// 	charLine(val);
+// 	intLine(val);
+// 	floatLine(val);
+// 	doubleLine(val);
+// }
 
 static void	printPseudo(const std::string &str)
 {
@@ -263,16 +265,26 @@ static void	printPseudo(const std::string &str)
 		std::cout << "double: -inf" << std::endl;
 	}
 }
-static void	printInvalid(const std::string &str)
+static void	printInvalid(void)
 {
-	(void)str;
+	std::cout << "char: impossible" << std::endl;
+    std::cout << "int: impossible" << std::endl;
+    std::cout << "float: impossible" << std::endl;
+    std::cout << "double: impossible" << std::endl;
 }
 
 void ScalarConverter::convert(const std::string &str)
 {
 	e_type parsedType = detectType(str);
-	PrintFunc printers[6] = {&printChar, &printInt, &printFloat, &printDouble,
-		&printPseudo, &printInvalid};
-
-	printers[parsedType](str);
+	// PrintFunc printers[6] = {&printChar, &printInt, &printFloat, &printDouble,
+	// 	&printPseudo, &printInvalid};
+	if(parsedType == TYPE_PSEUDO)
+		printPseudo(str);
+	else if(parsedType == TYPE_INVALID)
+		printInvalid();
+	else if(parsedType == TYPE_CHAR)
+		printChar(str);
+	else
+		printNumeric(str);
+		
 }

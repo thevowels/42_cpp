@@ -10,6 +10,7 @@
 #include <cmath> // check if cmath is allowed or not
 #include <cstdlib>
 #include <climits>
+#include <iomanip>
 
 enum e_type{
 	TYPE_CHAR,
