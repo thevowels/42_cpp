@@ -1,6 +1,8 @@
 #pragma once
 #include <exception>
 #include <vector>
+#include <algorithm>
+#include <numeric>
 
 class Span{
 	public:
@@ -9,9 +11,17 @@ class Span{
 		Span& operator=(const Span& other);
 		~Span();
 		void addNumber(int val);
-		int shortestSpan() const;
-		int longestSpan() const;
+		int shortestSpan() ;
+		int longestSpan() ;
 		class SingleEntryException: public std::exception{
+			public:
+				virtual const char * what() const throw();
+		};
+		class EmptyVectorException: public std::exception{
+			public:
+				virtual const char * what() const throw();
+		};
+		class StorageFullException: public std::exception{
 			public:
 				virtual const char * what() const throw();
 		};
@@ -19,6 +29,8 @@ class Span{
 		Span();
 		unsigned int _maxSize;
 		std::vector<int> _content;
-		std::vector<int> _sorted;
+		int _min;
+		int _max;
 		bool	_cached;
+		void compute();
 };
